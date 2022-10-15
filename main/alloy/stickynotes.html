@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width">
+    <!-- warning 针对移动端网页优化 宽度是设备屏幕的宽度 -->
+    <title>StickyNotes</title>
+</head>
+
+<style>
+    /*滚动条整体样式*/
+    html ::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+        height: 8px;
+    }
+
+    /*滚动条里面小方块*/
+    html ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: gray;
+    }
+
+    html ::-webkit-scrollbar-thumb:hover {
+        background: lightgray;
+    }
+
+    /*滚动条里面轨道*/
+    html ::-webkit-scrollbar-track {
+        background-color: white;
+    }
+
+    body {
+        display: flex;
+        justify-content: space-around;
+        overflow: scroll;
+    }
+
+    #left {
+        display: none;
+        top: 0;
+        position: sticky;
+        height: 25em;
+        margin: 1em;
+    }
+
+    #editor {
+        cursor: pointer;
+        user-select: none;
+        z-index: 1;
+        position: fixed;
+        right: 8px;
+        top: 0;
+    }
+
+    #right {
+        max-width: 100%;
+    }
+
+    pre {
+        box-shadow: -4px 0 lightgray;
+        padding: 0 .5em;
+        overflow: scroll;
+    }
+</style>
+
+<body>
+    <h4 id="editor">editor</h4>
+    <textarea id="left"></textarea>
+    <div id="right"></div>
+</body>
+
+<script src="./stickynotes.js"></script>
+
+</html>

@@ -1,0 +1,1 @@
+document.getElementById("userSetting").onclick=function(){chrome.tabs.create({url:chrome.runtime.getURL("./setting/setting.html")})};document.getElementById("setWinInfo").onclick=function(){chrome.runtime.sendMessage({name:"setWinInfo"})};document.getElementById("clearStorage").onclick=function(){chrome.storage.local.clear()};

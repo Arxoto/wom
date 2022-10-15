@@ -1,0 +1,1 @@
+customElements.define("w-itex",class extends HTMLElement{connectedCallback(){const wicon=document.createElement("img");wicon.alt=this.getAttribute("walt");wicon.src=this.getAttribute("wsrc");this.appendChild(wicon)}});

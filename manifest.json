@@ -1,0 +1,56 @@
+{
+	"manifest_version": 3,
+	"name": "wom",
+	"version": "0.0.0",
+	"author": "JesuseMory",
+	"description": "wom by jm",
+	"icons": {
+		"16": "wom.png",
+		"48": "wom.png",
+		"128": "wom.png"
+	},
+	// 权限
+	"permissions": [
+		"alarms",
+		"storage",
+		"unlimitedStorage",
+		"notifications",
+		"system.display"
+	],
+	// 图标弹窗
+	"action": {
+		"default_title": "Click to view a popup",
+		"default_popup": "popup/popup.html"
+	},
+	// 后台
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	// 快捷键响应
+	"commands": {
+		"main": {
+			"suggested_key": {
+				"default": "Alt+Q"
+			},
+			"description": "主界面",
+			"global": true
+		}
+	},
+	// 注入
+	"content_scripts": [
+		// 增加一个小气泡
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"css": [
+				"bubble/bubble.css"
+			],
+			"js": [
+				"bubble/bubble.js"
+			],
+			"run_at": "document_idle"
+		}
+	]
+}

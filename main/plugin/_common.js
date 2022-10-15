@@ -1,0 +1,1 @@
+const wom={copy:str=>navigator.clipboard.writeText(str),splitn:(str,len)=>{len--;ll=str.split("|");for(let i=0;i<ll.length;i++){if(i>len){ll[len]+="|"+ll[i]}}return ll},asyi:url=>{window.open(url,"_self")}};
