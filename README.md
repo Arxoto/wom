@@ -1,2 +1,2 @@
 # wom
-like Alfred Wox Listary Utool PowerToys
+Alfred Wox Listary
